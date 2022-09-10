@@ -6,20 +6,20 @@
 # 67.82 -> 23
 # 0.56 -> 11
 
-def number():
-    while True:
-        try:
-            num = float (input(' введите число: '))
-            return num
-        except(ValueError):
-            print('вы ввели не число')
-num = abs(number())
-
-sum = 0
-for i in str(num):
-    if i != ".":
-        sum += int(i)
-print(sum)
+#def number():
+#    while True:
+#        try:
+#            num = float (input(' введите число: '))
+#            return num
+#        except(ValueError):
+#            print('вы ввели не число')
+#num = abs(number())
+#
+#sum = 0
+#for i in str(num):
+#    if i != ".":
+#        sum += int(i)
+#print(sum)
 
 # num = InputNumbers("Введите число: ")
 
@@ -53,20 +53,21 @@ print(sum)
 # Напишите такую программу, которая найдет палиндром введенного пользователем числа.
 
 
-# def polindrom(str1):
-    # str2 = ' '
-    # sum = 0
-    # for i in range(len(s)-1, -1,-1):
-        # str2 += str1[i]
-        # print(str2)
-    # if str1 == str2:
-        # print('число палиндром')
-    # else:    
-        # print('число не палиндром')
-        # sum = int(str2)+int(str1)
-        # print(sum)
-    # sum = str1          
-# print(polindrom('123'))
+def polindrom(str1):
+     str2 = ' '
+     sum = 0
+     for i in range(len(str1)-1, -1,-1):
+         str2 += str1[i]
+         print(str2)
+     if str1 == str2:
+         print('число палиндром')
+     else:
+        while True:    
+         print('число не палиндром')
+         sum = int(str2)+int(str1)
+         print(sum)
+     sum = str1          
+print(polindrom('123'))
             
 # 4 - Реализуйте выдачу случайного числа не использовать random.randint и вообще библиотеку random Можете использовать
 
