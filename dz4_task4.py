@@ -7,32 +7,32 @@
 #функцию, которая спрашивает ключ, считывает текст и дешифровывает его
 
 
-# #def ceasar(str):
-# alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
-# message = input('Введите строку: ').lower()
-# key = int(input('Введите ключ: '))
-# encrypted = ''
-# for letter in message:
-    # if letter in alphabet:
-        # pos = alphabet.find(letter)
-        # new_pos = (pos + key) % len(alphabet)
-        # encrypted += alphabet[new_pos]
-    # else:
-        # encrypted += letter
-# print ('зашифрованное слово: ', encrypted)
-# #print(ceasar(str))
+def ceasar():
+    alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    message = input('Введите строку: ').lower()
+    key = int(input('Введите ключ: '))
+    encrypted = ''
+    for letter in message:
+        if letter in alphabet:
+            pos = alphabet.find(letter)
+            new_pos = (pos + key) % len(alphabet)
+            encrypted += alphabet[new_pos]
+        else:
+            encrypted += letter
+    return encrypted
+#ceasar()
 
-# def write_file():
-    # new_l =str.append(encrypted)
-    # print(new_l)
-    # f = open('file.txt', 'w')
-    # f.write(new_l)
-    # f.close()
-# write_file()
+def write_file():
+    input_stri = str(ceasar())
+    #print(input_stri)
+    f = open('file.txt', 'w', encoding='utf-8')
+    f.write(input_stri)
+    f.close()
+write_file()
 
 
-def read_file(n_stri):
-    x = open('file.txt', 'r')
-    n_stri = str(x.readline())
-    x.close()
-    return n_stri
+# def read_file(n_stri):
+    # x = open('file.txt', 'r')
+    # n_stri = str(x.readline())
+    # x.close()
+    # return n_stri
