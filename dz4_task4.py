@@ -31,8 +31,24 @@ def write_file():
 write_file()
 
 
-# def read_file(n_stri):
-    # x = open('file.txt', 'r')
-    # n_stri = str(x.readline())
-    # x.close()
-    # return n_stri
+def read_file(str):
+    x = open('file.txt', 'r', encoding='utf-8')
+    n_stri = str(x.readline())
+    x.close()
+    return n_stri
+print(read_file(str))
+
+def decode_ceasar():
+    alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    message = (read_file(str)).lower()
+    key = int(input('Введите ключ для дешифровки: '))
+    decrypted = ''
+    for letter in message:
+        if letter in alphabet:
+            pos = alphabet.find(letter)
+            new_pos = (pos - key) % len(alphabet)
+            decrypted += alphabet[new_pos]
+        else:
+            decrypted += letter
+    return decrypted
+print(decode_ceasar())
