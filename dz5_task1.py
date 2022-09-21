@@ -34,23 +34,28 @@
 #  с которым она в паре в кортеже, то кортеж остается, его номер заменяется на сумму очков.
 # [сумма очков c# = 102, в делителях есть 2 с которым в паре. Значит список будет]
 # [(1,'PYTHON'), (102,'C#')]
+ 
 lst_2 = ['1', '2', '3', '4', '5']
-lst_1 = ['Python', 'Java', 'C', 'C++', 'JavaScript']
+lst_1 = ['Python', 'Java', 'C', 'c#', 'JavaScript']
+ 
 new_lst = list(map(str.upper, lst_1))
-
 print(new_lst)
 data = list(zip(new_lst, lst_2))
 print(data)
-
-input = input(lst_1)
-word = []
-print(word)
  
-for i in line(len):
-    number =int ord(char)
-    word.append(number)
-    print (word)
-# sums = list(map(sum, list_of_lists))
+ 
+def find_sum_ord(data):
+    new_lst2 =[]
+    sum_ord = 0
+    for lst_1,lst_2 in data :
+        for i in lst_1 :
+            sum_ord += ord(i)
+        #print(sum_ord)
+            new_lst2.append((sum_ord, lst_2))
+    return new_lst2
+    #print(new_lst2)
+print(find_sum_ord(data))
+
 
 # 2- Создайте программу для игры с конфетами человек против человека.
 # 
@@ -155,3 +160,6 @@ for i in line(len):
 #     print(f"Выиграл {player1}")
 # else:
 #     print(f"Выиграл {player2}")
+#
+#
+#
